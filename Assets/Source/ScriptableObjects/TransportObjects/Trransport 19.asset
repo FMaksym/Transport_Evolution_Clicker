@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 19
   m_EditorClassIdentifier: 
-  Name: Level 19. Motorboat
+  Name: Lvl 19. Motorboat
   MaxHealth: 3000000
   Image: {fileID: 21300000, guid: dec9ea178c30d884a983f7e19bfc81cc, type: 3}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 33
   m_EditorClassIdentifier: 
-  Name: Level 33. Helicopter
+  Name: Lvl 33. Helicopter
   MaxHealth: 65000000
   Image: {fileID: 21300000, guid: 2775620bb5e95334db310fb786bf7421, type: 3}

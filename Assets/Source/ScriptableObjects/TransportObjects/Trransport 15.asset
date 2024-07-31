@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 15
   m_EditorClassIdentifier: 
-  Name: Level 15. Tramway
+  Name: Lvl 15. Tramway
   MaxHealth: 1200000
   Image: {fileID: 21300000, guid: c8d96097660d189439a4eeab2bfad224, type: 3}

@@ -1,50 +1,115 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 
 public class InternetChecker : MonoBehaviour
 {
-    [SerializeField] private float checkInterval = 5f; // Интервал проверки в секундах
-    private bool isChecking = false;
+    public bool isInternetConnection = true;
 
-    private void Start()
+    [SerializeField] private float checkInterval = 10f;
+    [SerializeField] private bool isChecking = false;
+    [SerializeField] private bool canCheckInternet = true;
+
+    public static InternetChecker Instance { get; private set; }
+
+    public delegate void InternetLoseHandler();
+    public static event InternetLoseHandler InternetConnectionLose;
+
+    private Task internetCheckTask;
+
+    void Awake()
     {
-        StartCoroutine(CheckInternetConnection());
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
-    private IEnumerator CheckInternetConnection()
+    private async void Start()
     {
-        while (true)
+        //canCheckInternet = true;
+        //await StartCheckingInternetAsync();
+    }
+
+    public void StartCheckingInternet()
+    {
+        canCheckInternet = true;
+        _ = StartCheckingInternetAsync();
+    }
+
+    //private void Update()
+    //{
+    //    if (canCheckInternet)
+    //    {
+    //        TryCheckInternet();
+    //    }
+    //}
+
+    private async Task StartCheckingInternetAsync()
+    {
+        while (canCheckInternet)
         {
-            yield return new WaitForSeconds(checkInterval);
             if (!isChecking)
             {
                 isChecking = true;
-                StartCoroutine(CheckConnection());
+                await CheckConnectionAsync();
             }
+            await Task.Delay((int)(checkInterval * 1000)); // Wait before the next check
         }
     }
 
-    private IEnumerator CheckConnection()
+    //private async void TryCheckInternet()
+    //{
+    //    if (!isChecking)
+    //    {
+    //        isChecking = true;
+    //        await CheckConnectionAsync();
+    //    }
+    //    await Task.Delay((int)(checkInterval * 1000));
+    //}
+
+    private async Task CheckConnectionAsync()
     {
-        using (UnityWebRequest webRequest = UnityWebRequest.Get("http://google.com"))
+        using (UnityWebRequest webRequest = UnityWebRequest.Get("https://google.com"))
         {
-            yield return webRequest;
-            isChecking = false;
-            if (webRequest.error != null)
+            await webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.Success)
+            {
+                isInternetConnection = true;
+                Debug.Log("Internet connection is working correctly");
+            }
+            else
             {
                 HandleNoInternet();
+                Debug.Log("No Internet Connection: " + webRequest.error);
             }
+
+            isChecking = false;
         }
+    }
+
+    public bool IsCanCheckInternet()
+    {
+        return canCheckInternet;
     }
 
     private void HandleNoInternet()
     {
-        // Приостановка игры
-        Time.timeScale = 0;
+        canCheckInternet = false;
+        isInternetConnection = false;
+        InternetConnectionLose?.Invoke();
+    }
 
-        // Переход на сцену загрузки
-        SceneManager.LoadScene("LoadingScene"); // Имя сцены загрузки
+    private void OnDestroy()
+    {
+        canCheckInternet = false;
     }
 }

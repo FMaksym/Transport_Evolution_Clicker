@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 20
   m_EditorClassIdentifier: 
-  Name: Level 20. Hang Glider
+  Name: Lvl 20. Hang Glider
   MaxHealth: 4000000
   Image: {fileID: 21300000, guid: 33e0c89c2f8695f4ba0c65f85e59628a, type: 3}

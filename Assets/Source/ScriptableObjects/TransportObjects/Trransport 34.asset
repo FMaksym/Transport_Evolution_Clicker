@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 34
   m_EditorClassIdentifier: 
-  Name: Level 34. Skateboard
+  Name: Lvl 34. Skateboard
   MaxHealth: 80000000
   Image: {fileID: 21300000, guid: 92904b68f05ac9e4abcb8b1f038b669c, type: 3}

@@ -18,6 +18,7 @@ public class ImprovementData : MonoBehaviour
     [SerializeField] private List<int> _maxEnergyPrices;
     [SerializeField] private List<int> _rechargeSpeedPrices;
     [SerializeField] private int _tapBotPrice = 250000;
+    [SerializeField] private int _secondsForVideoRewardMultiplier = 1800;
 
     private int _clickRewardUpgradeStep = 1;
     private int _maxEnergyUpgradeStep = 500;
@@ -41,7 +42,7 @@ public class ImprovementData : MonoBehaviour
     public int ClickCost { get => _clickCost; set { _clickCost = value; ClickCostChanged?.Invoke(); } }
     public int MaxEnergy { get => _maxEnergy; set { _maxEnergy = value; MaxEnergyAmountChanged?.Invoke(); } }
     public float RechargeSpeed { get => _rechargeSpeed; set { _rechargeSpeed = value; RechargeSpeedChanged?.Invoke(); } }
-    public bool IsTapBotPurchased { get => _tapBotPurchased; set => _tapBotPurchased = value; }
+    public bool IsTapBotPurchased { get => _tapBotPurchased; set { _tapBotPurchased = value; ClickBotPurchased?.Invoke(); } }
     public int DefaultClickReward { get => _defaultClickReward; set => _defaultClickReward = value; }
     public int DefaultMaxEnergy { get => _defaultMaxEnergy; set => _defaultMaxEnergy = value; }
     public float DefaultRechargeSpeed { get => _defaultRechargeSpeed; set => _defaultRechargeSpeed = value; }
@@ -58,6 +59,7 @@ public class ImprovementData : MonoBehaviour
     public List<int> MaxEnergyPrices { get => _maxEnergyPrices; set => _maxEnergyPrices = value; }
     public List<int> RechargeSpeedPrices { get => _rechargeSpeedPrices; set => _rechargeSpeedPrices = value; }
     public int TapBotPrice { get => _tapBotPrice; set => _tapBotPrice = value; }
+    public int VideoRewardMultiplier { get => _secondsForVideoRewardMultiplier; private set { } }
 
     public delegate void ClickCostChangedHandler();
     public delegate void MaxEnergyChangedHandler();

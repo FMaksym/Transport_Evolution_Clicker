@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 12
   m_EditorClassIdentifier: 
-  Name: Level 12. Train
+  Name: Lvl 12. Train
   MaxHealth: 750000
   Image: {fileID: 21300000, guid: 6c50ad14253e8e9448355b164a4ef99a, type: 3}

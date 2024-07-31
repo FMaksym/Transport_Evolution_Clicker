@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 39
   m_EditorClassIdentifier: 
-  Name: Level 39. Segway
+  Name: Lvl 39. Segway
   MaxHealth: 800000000
   Image: {fileID: 21300000, guid: 017ddad03fe3c2e40a5b22e6d16e6ce5, type: 3}

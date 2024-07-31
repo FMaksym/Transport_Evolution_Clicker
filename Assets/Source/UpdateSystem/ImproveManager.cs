@@ -62,6 +62,7 @@ public class ImproveManager : MonoBehaviour
             if (currency.SpendCurrency(cost))
             {
                 improvementData.IsTapBotPurchased = true;
+                _clickerBot.gameObject.SetActive(improvementData.IsTapBotPurchased);
                 improvementData.SaveData();
             }
         }

@@ -10,6 +10,7 @@ public class DailyRewardSystem : MonoBehaviour
     public int currentStreak;
 
     public bool _canClaimReward;
+    public bool _canGetTime = false;
     private const string TimeApiUrl = "https://worldtimeapi.org/api/timezone/Europe/Kiev";
     private const int MaxStreak = 7;
     private DateTime lastRewardTime;
@@ -22,6 +23,7 @@ public class DailyRewardSystem : MonoBehaviour
 
     private void Awake()
     {
+        _canGetTime = true;
         currentStreak = PlayerPrefs.GetInt("CurrentStreak", 0);
         if (PlayerPrefs.HasKey("LastRewardTime"))
         {
@@ -37,7 +39,7 @@ public class DailyRewardSystem : MonoBehaviour
 
     private async void GetServerTimeTask()
     {
-        while (true)
+        while (_canGetTime)
         {
             await GetServerTime();
             await Task.Delay(1000);
@@ -139,9 +141,9 @@ public class DailyRewardSystem : MonoBehaviour
         return _canClaimReward;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        
+        _canGetTime = false;
     }
 
     [Serializable]

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 31
   m_EditorClassIdentifier: 
-  Name: Level 31. Passenger Airplane
+  Name: Lvl 31. Passenger Airplane
   MaxHealth: 40000000
   Image: {fileID: 21300000, guid: b493245ec3604ab4292d6959f1095934, type: 3}

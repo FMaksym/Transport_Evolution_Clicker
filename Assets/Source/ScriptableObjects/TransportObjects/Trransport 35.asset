@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 35
   m_EditorClassIdentifier: 
-  Name: Level 35. Space Rocket
+  Name: Lvl 35. Space Rocket
   MaxHealth: 100000000
   Image: {fileID: 21300000, guid: cde21eb85fcf2f3458f72018aa49ba3e, type: 3}

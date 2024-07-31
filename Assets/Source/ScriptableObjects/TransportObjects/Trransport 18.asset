@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 18
   m_EditorClassIdentifier: 
-  Name: Level 18. Automobile
+  Name: Lvl 18. Automobile
   MaxHealth: 2250000
   Image: {fileID: 21300000, guid: d262d17585b06a64ea7abcd6f81c2436, type: 3}

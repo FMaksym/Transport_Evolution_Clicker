@@ -33,6 +33,7 @@ public class UpdatePanelUI : MonoBehaviour
         ImprovementData.ClickCostChanged += UpdateClickRewardInfo;
         ImprovementData.MaxEnergyAmountChanged += UpdateMaxEnergyInfo;
         ImprovementData.RechargeSpeedChanged += UpdateRechargeSpeedInfo;
+        ImprovementData.ClickBotPurchased += UpdateTapBotInfo;
     }
 
     private void Start()
@@ -86,9 +87,6 @@ public class UpdatePanelUI : MonoBehaviour
     private void UpdateMaxEnergyInfo()
     {
         ChangeUpdateLevelText(MaxEnergyLevelText, _improvementData.MaxEnergyCurrentLevel, _improvementData.MaxEnergyMaxLevel);
-
-        Debug.Log("MaxEnergyCurrentLevel = " + _improvementData.MaxEnergyCurrentLevel);
-        Debug.Log("MaxEnergyMaxLevel = " + _improvementData.MaxEnergyMaxLevel);
 
         if (_improvementData.MaxEnergyCurrentLevel < _improvementData.MaxEnergyMaxLevel)
         {

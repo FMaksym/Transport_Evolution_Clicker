@@ -30,7 +30,6 @@ public class TransportHealthManager : MonoBehaviour
             if (_currentHealth <= 0)
             {
                 ChangeTransportToNext();
-                TransportHealthEnd?.Invoke();
             }
         }
     }
@@ -78,6 +77,9 @@ public class TransportHealthManager : MonoBehaviour
         _currentTransport = _transportList[_currentTransportIndex];
         _currentMaxHealth = _currentTransport.MaxHealth;
         CurrentHealth = _currentMaxHealth;
+
+        TransportHealthEnd?.Invoke();
+
         SaveCurrentTransport();
         SaveCurrentMaxHealth();
     }

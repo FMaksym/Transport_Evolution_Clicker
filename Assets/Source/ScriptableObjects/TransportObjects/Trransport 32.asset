@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 32
   m_EditorClassIdentifier: 
-  Name: Level 32. Snowmobile
+  Name: Lvl 32. Snowmobile
   MaxHealth: 50000000
   Image: {fileID: 21300000, guid: dcabafded37e8d04e9e7ba004c05cee3, type: 3}

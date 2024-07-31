@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 22
   m_EditorClassIdentifier: 
-  Name: Level 22. Bus
+  Name: Lvl 22. Bus
   MaxHealth: 6000000
   Image: {fileID: 21300000, guid: 442d7111221048940ab2e9c1607d23e7, type: 3}

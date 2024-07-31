@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4299a8908e8054eacfa72fb6be83f1, type: 3}
   m_Name: Trransport 21
   m_EditorClassIdentifier: 
-  Name: Level 21. Tractor
+  Name: Lvl 21. Tractor
   MaxHealth: 5000000
   Image: {fileID: 21300000, guid: 79a6b1777e4f90247b8eef293597ebff, type: 3}

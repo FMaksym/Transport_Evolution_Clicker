@@ -22,7 +22,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         LoadCurrency();
     }
 
