@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ImproveManager : MonoBehaviour
@@ -67,32 +65,4 @@ public class ImproveManager : MonoBehaviour
             }
         }
     }
-
-    //private void LoadUpgradeLevels()
-    //{
-    //    _clickRewardLevel = PlayerPrefs.GetInt(_clickRewardLevelKey, 1); // Default level is 1
-    //    _maxEnergyLevel = PlayerPrefs.GetInt(_maxEnergyLevelKey, 1); // Default level is 1
-    //}
-
-    //private void SaveClickRewardLevel()
-    //{
-    //    PlayerPrefs.SetInt(_clickRewardLevelKey, upgradeData._clickRewardCurrentLevel);
-    //    PlayerPrefs.Save();
-    //}
-
-    //private void SaveMaxEnergyLevel()
-    //{
-    //    PlayerPrefs.SetInt(_maxEnergyLevelKey, upgradeData._maxEnergyCurrentLevel);
-    //    PlayerPrefs.Save();
-    //}
-
-    //public int GetClickRewardLevel()
-    //{
-    //    return _clickRewardLevel;
-    //}
-
-    //public int GetMaxEnergyLevel()
-    //{
-    //    return _maxEnergyLevel;
-    //}
 }

@@ -1,16 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AbsenceTimeCalculator : MonoBehaviour
 {
     private readonly string _lastExitTimeKey = "LastExitTime";
-
-    private void Start()
-    {
-        
-    }
 
     public void SaveExitTime()
     {

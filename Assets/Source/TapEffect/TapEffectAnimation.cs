@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
@@ -7,18 +5,23 @@ using DG.Tweening;
 public class TapEffectAnimation : MonoBehaviour
 {
     public float EndPositionY = 300f;
-    public float animationDuration = 1.0f;
-    public TMP_Text text;
+    public float AnimationDuration = 1.0f;
+    public TMP_Text Text;
     
-    public TapEffectPool _effectPool;
-    private Tween moveTween;
-    private Tween fadeTween;
+    private TapEffectPool _effectPool;
+    private Tween _moveTween;
+    private Tween _fadeTween;
+
+    private void OnEnable()
+    {
+        PlayEffect();
+    }
 
     private void Awake()
     {
-        if (text == null)
+        if (Text == null)
         {
-            text = GetComponent<TMP_Text>();
+            Text = GetComponent<TMP_Text>();
         }
 
         if (_effectPool == null)
@@ -27,41 +30,20 @@ public class TapEffectAnimation : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        PlayEffect();
-    }
-
     private void PlayEffect()
     {
-        moveTween = transform.DOMoveY(transform.position.y + EndPositionY, animationDuration);
-        fadeTween = text.DOFade(0, animationDuration).OnComplete(() => {
+        _moveTween = transform.DOMoveY(transform.position.y + EndPositionY, AnimationDuration);
+
+        _fadeTween = Text.DOFade(0, AnimationDuration).OnComplete(() => {
             ResetText();
             transform.localPosition = Vector3.zero;
-            text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
-            //ResetAnimation();
+            Text.color = new Color(Text.color.r, Text.color.g, Text.color.b, 1);
             _effectPool.ReturnVisualEffect(this);
         });
     }
 
-    private void ResetAnimation()
-    {
-        if (moveTween != null && moveTween.IsActive())
-        {
-            moveTween.Kill();
-        }
-
-        if (fadeTween != null && fadeTween.IsActive())
-        {
-            fadeTween.Kill();
-        }
-
-        
-        
-    }
-
     private void ResetText()
     {
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+        Text.color = new Color(Text.color.r, Text.color.g, Text.color.b, 1);
     }
 }

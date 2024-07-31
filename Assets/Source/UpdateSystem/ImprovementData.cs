@@ -1,24 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class ImprovementData : MonoBehaviour
 {
-    [Header ("Default Parameteres Values")]
+    [Space(2), Header ("Default Parameteres Values")]
     [SerializeField] private int _defaultClickReward = 1;
     [SerializeField] private int _defaultMaxEnergy = 2000;
     [SerializeField] private float _defaultRechargeSpeed = 3.0f;
-    [Header("Maximum Parameter Values")]
+
+    [Space(2), Header("Maximum Parameter Values")]
     [SerializeField] private int _clickRewardMaxLevel = 20;
     [SerializeField] private int _maxEnergyMaxLevel = 15;
     [SerializeField] private int _rechargeSpeedMaxLevel = 10;
-    [Header("Parameter Prices")]
+
+    [Space(2), Header("Parameter Prices")]
+    [SerializeField] private int _tapBotPrice = 250000;
+    [SerializeField] private int _secondsForVideoRewardMultiplier = 1800;
     [SerializeField] private List<int> _clickRewardPrices;
     [SerializeField] private List<int> _maxEnergyPrices;
     [SerializeField] private List<int> _rechargeSpeedPrices;
-    [SerializeField] private int _tapBotPrice = 250000;
-    [SerializeField] private int _secondsForVideoRewardMultiplier = 1800;
 
     private int _clickRewardUpgradeStep = 1;
     private int _maxEnergyUpgradeStep = 500;
@@ -81,9 +82,9 @@ public class ImprovementData : MonoBehaviour
         MaxEnergy = PlayerPrefs.GetInt(_maxEnergyKey, DefaultMaxEnergy);
         RechargeSpeed = PlayerPrefs.GetFloat(_rechargeSpeedKey, DefaultRechargeSpeed);
         IsTapBotPurchased = PlayerPrefs.GetInt(_tapBotPurchasedKey, 0) == 1;
-        ClickRewardCurrentLevel = PlayerPrefs.GetInt(_clickRewardCurrentLevelKey, 1); // Default level is 1
-        MaxEnergyCurrentLevel = PlayerPrefs.GetInt(_maxEnergyCurrentLevelKey, 1); // Default level is 1
-        RechargeSpeedCurrentLevel = PlayerPrefs.GetInt(_rechargeSpeedCurrentLevelKey, 1); // Default level is 1
+        ClickRewardCurrentLevel = PlayerPrefs.GetInt(_clickRewardCurrentLevelKey, 1);
+        MaxEnergyCurrentLevel = PlayerPrefs.GetInt(_maxEnergyCurrentLevelKey, 1);
+        RechargeSpeedCurrentLevel = PlayerPrefs.GetInt(_rechargeSpeedCurrentLevelKey, 1);
     }
 
     public void SaveData()

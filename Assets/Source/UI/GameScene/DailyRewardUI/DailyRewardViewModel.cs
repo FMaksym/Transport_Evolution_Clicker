@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DailyRewardViewModel : MonoBehaviour
@@ -19,6 +17,11 @@ public class DailyRewardViewModel : MonoBehaviour
         rewardView.UpdateRewardTimer(rewardModel);
     }
 
+    public void OnClickClaimReward()
+    {
+        rewardView.ClimeReward(rewardModel);
+    }
+
     private void Initialize()
     {
         rewardView.InitializeRewards(rewardModel);
@@ -32,11 +35,6 @@ public class DailyRewardViewModel : MonoBehaviour
     private void UpdateRewards()
     {
         rewardView.UpdateRewardStreak(rewardModel);
-    }
-
-    public void OnClickClaimReward()
-    {
-        rewardView.ClimeReward(rewardModel);
     }
 
     private void OnDisable()

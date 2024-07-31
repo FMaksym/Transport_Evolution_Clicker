@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -44,7 +42,6 @@ public class DailyRewardView : MonoBehaviour
             int reward = rewardModel.DailyRewardSystem.rewardList[rewardModel.DailyRewardSystem.currentStreak];
 
             rewardModel.DailyRewardSystem.CollectReward();
-            //rewardModel.RewardCheakmarkList[rewardSystem.currentStreak - 1].SetActive(true);
             rewardModel.CurrencyManager.AddCurrency(reward);
 
             UpdateClaimRewardButton(rewardModel, rewardModel.DailyRewardSystem.CanClaimReward());

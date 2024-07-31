@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugManager;
 
 public class LoadUIViewModel : MonoBehaviour
 {
@@ -37,7 +34,6 @@ public class LoadUIViewModel : MonoBehaviour
 
     public void OnClickRestartGame()
     {
-        //loadUIModel.InternetChecker.StartCheckingInternet();
         loadUIView.RestartGame();
     }
 

@@ -1,28 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class UpdatePanelUI : MonoBehaviour
 {
+    [Space(2), Header("Managers")]
     [SerializeField] private ImprovementData _improvementData;
     [SerializeField] private ImproveManager _updateManager;
     [SerializeField] private CurrencyManager _currency;
 
+    [Space(2), Header("Prise Texts")]
     [SerializeField] private TMP_Text ClickRewardPriseText;
     [SerializeField] private TMP_Text MaxEnergyPriseText;
     [SerializeField] private TMP_Text RechargeSpeedPriseText;
     [SerializeField] private TMP_Text TapBotPriseText;
 
+    [Space(2), Header("Current Update Level Texts")]
     [SerializeField] private TMP_Text ClickRewardLevelText;
     [SerializeField] private TMP_Text MaxEnergyLevelText;
     [SerializeField] private TMP_Text RechargeSpeedLevelText;
 
+    [Space(2), Header("Buy Status Texts")]
     [SerializeField] private TMP_Text ClickRewardLevelStatusText;
     [SerializeField] private TMP_Text MaxEnergyLevelStatusText;
     [SerializeField] private TMP_Text RechargeSpeedLevelStatusText;
     [SerializeField] private TMP_Text TapBotPurchaseStatusText;
 
+    [Space(2), Header("Update Buttons")]
     [SerializeField] private GameObject ClickRewardUpdButton;
     [SerializeField] private GameObject MaxEnergyUpdButton;
     [SerializeField] private GameObject RechargeSpeedUpdButton;
@@ -81,7 +84,6 @@ public class UpdatePanelUI : MonoBehaviour
         {
             DisableImprovementOption(ClickRewardUpdButton, ClickRewardLevelStatusText);
         }
-
     }
 
     private void UpdateMaxEnergyInfo()

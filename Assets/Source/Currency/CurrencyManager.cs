@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
@@ -22,7 +19,6 @@ public class CurrencyManager : MonoBehaviour
 
     private void Awake()
     {
-        //PlayerPrefs.DeleteAll();
         LoadCurrency();
     }
 
@@ -30,14 +26,9 @@ public class CurrencyManager : MonoBehaviour
     {
         if (amount > 0)
         {
-            if (CurrentCurrency < int.MaxValue)
-            {
-                CurrentCurrency += amount;
-            }
-            
+            CurrentCurrency += amount;
             SaveCurrency();
         }
-        
     }
 
     public bool SpendCurrency(int amount)

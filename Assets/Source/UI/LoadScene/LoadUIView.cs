@@ -1,9 +1,7 @@
-using DG.Tweening;
-using System.Collections;
-using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class LoadUIView : MonoBehaviour
 {
@@ -19,9 +17,6 @@ public class LoadUIView : MonoBehaviour
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneLoadName);
         loadOperation.allowSceneActivation = false;
 
-        Debug.Log("AsyncLoad Start");
-
-
         while (!loadOperation.isDone)
         {
             if (loadUIModel.InternetChecker.isInternetConnection)
@@ -36,11 +31,6 @@ public class LoadUIView : MonoBehaviour
 
             await Task.Yield();
         }
-    }
-
-    private async Task WaitAndLoadScene(LoadUIModel loadUIModel)
-    {
-        await Task.Delay((int) loadUIModel.LoadingTime * 1000);
     }
 
     public void ScrollBackground(LoadUIModel loadUIModel)
@@ -67,9 +57,13 @@ public class LoadUIView : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    private async Task WaitAndLoadScene(LoadUIModel loadUIModel)
+    {
+        await Task.Delay((int)loadUIModel.LoadingTime * 1000);
+    }
+
     private void RotateLoadingImage(LoadUIModel loadUIModel)
     {
-        // Вращать изображение по оси Z на 360 градусов за 1 секунду, и повторять это бесконечно
         loadUIModel.loadingImage.rectTransform.DORotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
                                   .SetEase(Ease.Linear)
                                   .SetLoops(-1, LoopType.Restart);

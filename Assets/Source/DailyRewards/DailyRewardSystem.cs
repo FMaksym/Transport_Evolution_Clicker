@@ -6,11 +6,11 @@ using UnityEngine.Networking;
 
 public class DailyRewardSystem : MonoBehaviour
 {
-    public List<int> rewardList;
     public int currentStreak;
-
     public bool _canClaimReward;
-    public bool _canGetTime = false;
+    public bool _canGetTime = true;
+    public List<int> rewardList;
+
     private const string TimeApiUrl = "https://worldtimeapi.org/api/timezone/Europe/Kiev";
     private const int MaxStreak = 7;
     private DateTime lastRewardTime;
@@ -23,7 +23,6 @@ public class DailyRewardSystem : MonoBehaviour
 
     private void Awake()
     {
-        _canGetTime = true;
         currentStreak = PlayerPrefs.GetInt("CurrentStreak", 0);
         if (PlayerPrefs.HasKey("LastRewardTime"))
         {
@@ -119,21 +118,15 @@ public class DailyRewardSystem : MonoBehaviour
 
     public string TimeToNextReward()
     {
-        DateTime nextRewardTime = DateTime.Today.AddDays(1).Date; // Установить следующую награду на 00:00 следующего дня
+        DateTime nextRewardTime = DateTime.Today.AddDays(1).Date;
         TimeSpan remainingTime = nextRewardTime - currentServerTime;
 
         if (remainingTime < TimeSpan.Zero)
         {
-            remainingTime = TimeSpan.Zero; // Убедиться, что оставшееся время не отрицательное
+            remainingTime = TimeSpan.Zero;
         }
 
         return remainingTime.ToString(@"hh\:mm\:ss");
-
-        //DateTime nextRewardTime = lastRewardTime.Date.AddDays(1).Date;
-        //TimeSpan remainingTime = nextRewardTime - currentServerTime;
-
-        ////return remainingTime.ToString(@"dd\:hh\:mm\:ss");
-        //return remainingTime.ToString(@"hh\:mm\:ss");
     }
 
     public bool CanClaimReward()

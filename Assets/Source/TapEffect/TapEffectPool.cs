@@ -1,16 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TapEffectPool : MonoBehaviour
 {
+    public int poolSize = 10;
     public ImprovementData improvementData;
     public GameObject visualEffectPrefab;
-    public int poolSize = 10;
 
-    public Queue<TapEffectAnimation> pool;
-    public List<TMP_Text> textObjects;
+    private Queue<TapEffectAnimation> _pool;
+    private List<TMP_Text> _textObjects;
 
     private void OnEnable()
     {
@@ -19,7 +18,7 @@ public class TapEffectPool : MonoBehaviour
 
     private void Awake()
     {
-        pool = new Queue<TapEffectAnimation>();
+        _pool = new Queue<TapEffectAnimation>();
 
         for (int i = 0; i < poolSize; i++)
         {
@@ -29,11 +28,11 @@ public class TapEffectPool : MonoBehaviour
             TMP_Text textComponent = obj.GetComponentInChildren<TMP_Text>();
             if (textComponent != null)
             {
-                textObjects.Add(textComponent);
+                _textObjects.Add(textComponent);
             }
 
             obj.SetActive(false);
-            pool.Enqueue(visualEffect);
+            _pool.Enqueue(visualEffect);
         }
 
         UpdateAllTextObjects();
@@ -41,9 +40,9 @@ public class TapEffectPool : MonoBehaviour
 
     public TapEffectAnimation GetVisualEffect(Vector2 tapPosition)
     {
-        if (pool.Count > 0)
+        if (_pool.Count > 0)
         {
-            TapEffectAnimation effect = pool.Dequeue();
+            TapEffectAnimation effect = _pool.Dequeue();
             effect.transform.position = tapPosition;
             effect.gameObject.SetActive(true);
             return effect;
@@ -59,12 +58,12 @@ public class TapEffectPool : MonoBehaviour
     {
         effect.gameObject.SetActive(false);
         effect.transform.position = Vector3.zero;
-        pool.Enqueue(effect);
+        _pool.Enqueue(effect);
     }
 
     public void UpdateAllTextObjects()
     {
-        foreach (var textObject in textObjects)
+        foreach (var textObject in _textObjects)
         {
             textObject.text = $"+{improvementData.ClickCost}";
         }

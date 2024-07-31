@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UIViewModel : MonoBehaviour
@@ -35,23 +33,6 @@ public class UIViewModel : MonoBehaviour
         uiView.ScrollBackground(uiModel);
     }
 
-    private void ShowNoInternetMessage()
-    {
-        uiView.ShowGameMessage(uiModel.NoInternetMessagePanel);
-    }
-
-    private void ShowNewLevelMessage()
-    {
-        uiView.UpdateNewLevelMessageInfo(uiModel);
-        uiView.ShowGameMessage(uiModel.NewLevelMessagePanel);
-    }
-
-    private void UpdateEnergyAmountText() => uiView.UpadateEnergyText(uiModel);
-
-    private void LoadTransportInfo() => uiView.LoadTransportInfo(uiModel);
-    
-    private void UpdateHealthInfo() => uiView.UpadateHealth(uiModel);
-
     public void OpenUpdatePanel() => uiView.OpenPanel(uiModel.UpdatePanel);
 
     public void OpenRoadLogPanel() => uiView.OpenPanel(uiModel.RoadLogPanel);
@@ -59,9 +40,9 @@ public class UIViewModel : MonoBehaviour
     public void OpenShopPanel() => uiView.OpenPanel(uiModel.ShopPanel);
 
     public void OpenInstructionPanel() => uiView.OpenPanel(uiModel.InstructionPanel);
-    
+
     public void OpenSettingsPanel() => uiView.OpenPanel(uiModel.SettingsPanel);
-    
+
     public void OpenDailyRewardPanel() => uiView.OpenPanel(uiModel.DailyRewardPanel);
 
     public void OpenRewardedVideoPanel()
@@ -83,11 +64,29 @@ public class UIViewModel : MonoBehaviour
     public void CloseDailyRewardPanel() => uiView.ClosePanel(uiModel.DailyRewardPanel);
 
     public void CloseNewLevelMessage() => uiView.HideMessage(uiModel.NewLevelMessagePanel);
-    
+
     public void CloseRewardedVideoPanel() => uiView.ClosePanel(uiModel.RewardedVideoPanel);
 
     public void OnClickRestartGame() => uiView.RestartGame(uiModel);
 
+    private void ShowNoInternetMessage()
+    {
+        uiView.ShowGameMessage(uiModel.NoInternetMessagePanel);
+    }
+
+    private void ShowNewLevelMessage()
+    {
+        uiView.UpdateNewLevelMessageInfo(uiModel);
+        uiView.ShowGameMessage(uiModel.NewLevelMessagePanel);
+    }
+
+    private void UpdateEnergyAmountText() => uiView.UpadateEnergyText(uiModel);
+
+    private void LoadTransportInfo() => uiView.LoadTransportInfo(uiModel);
+    
+    private void UpdateHealthInfo() => uiView.UpadateHealth(uiModel);
+
+    
     private void OnDisable()
     {
         EnergyManager.EnergyAmountChanged -= UpdateEnergyAmountText;
