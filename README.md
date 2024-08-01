@@ -1,26 +1,28 @@
 <h1 align="center"> Transport Evolution Clicker </h1>
 
-<h2 align="center"> Описание </h2>
+<h2 align="center"> Description </h2>
 
-Transport Evolution Clicker — это увлекательный кликер, где вы отправитесь в путешествие сквозь историю транспорта. Начав с простых средств передвижения, таких как лодка, вы будете постепенно открывать всё более современные транспортные средства, узнавая краткую историю открытия каждого из них. В игре представлены ключевые этапы развития транспорта, от изобретения колеса до современных автомобилей и поездов.
+Transport Evolution Clicker is a fun clicker game that takes you on a journey through the history of transport. Starting with simple means of transportation, such as a boat, you will gradually unlock more and more advanced vehicles, learning a brief history of the discovery of each of them. The game presents key stages in the development of transport, from the invention of the wheel to modern cars and trains.
 
-Каждый клик на объекте транспорта уменьшает его здоровье. Как только здоровье объекта исчерпано, вы переходите на новый уровень, открывая следующий этап в истории транспорта. Вы также можете улучшать свои возможности, чтобы ускорить процесс и получать больше наград.
+Each click on a transport object reduces its health. Once the health of an object is depleted, you move to a new level, unlocking the next stage in the history of transport. You can also upgrade your abilities to speed up the process and get more rewards.
 
-Transport Evolution Clicker предлагает ежедневные награды для активных игроков, а также возможность просмотра рекламы для получения дополнительных бонусов. Для доступа к игре требуется интернет-соединение.
+Transport Evolution Clicker offers daily rewards for active players, as well as the ability to watch ads for additional bonuses. An Internet connection is required to access the game.
 
-Что реализовано:
-* Система улучшений;
-* Анимации (DoTween);
-* Хранение данных в PlayerPrefs;
-* UI на MVVM;
+What has been implemented:
+* Improvement system;
+* Animations (DoTween);
+* Data storage in PlayerPrefs;
+* UI on MVVM;
 * Observer, Object Pool;
-* Реклама (ironSource, UnityAD, Google AdMob);
-* Внутриигровые покупки (In-App Purchase);
+* Advertising (ironSource, UnityAD, Google AdMob);
+* In-App Purchases;
 * Scriptable Object;
-* Проверка наличия интернета;
-* Ежедневные награды.
+* Checking the availability of the Internet;
+* Daily rewards.
 
-<h2 align="center"> Визуальный обзор </h2>
+> In this project, advertising is implemented, but the build temporarily does not contain it due to numerous unknown errors during the build of a project containing advertising.
+
+<h2 align="center"> Visual overview </h2>
 
 <p align="center">
   <img src="https://github.com/FMaksym/Transport_Evolution_Clicker/raw/main/Assets/Git%20Resources/Screenshots/LoadScreen_photo.jpg" title="Load Screen" width="250"/>
@@ -40,9 +42,9 @@ Transport Evolution Clicker предлагает ежедневные награ
   <img src="https://github.com/FMaksym/Transport_Evolution_Clicker/raw/main/Assets/Git%20Resources/Screenshots/LoadScreenNoInternet_photo.jpg" title="Load Screen No Internet" width="250"/>
 </p>
 
-<h2 align="center"> Скачать билд </h2>
+<h2 align="center"> Download build </h2>
 
-Вы можете скачать последнюю версию игры [здесь](https://github.com/FMaksym/Transport_Evolution_Clicker/raw/main/Assets/Git%20Resources/Build/Transport%20Evolution.apk).
+You can download the latest version of the game [here](https://github.com/FMaksym/Transport_Evolution_Clicker/raw/main/Assets/Git%20Resources/Build/Transport%20Evolution.apk).
 
 
 
